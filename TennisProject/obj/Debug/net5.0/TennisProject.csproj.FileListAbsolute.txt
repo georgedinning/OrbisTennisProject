@@ -1,0 +1,16 @@
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\bin\Debug\net5.0\TennisProject.exe
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\bin\Debug\net5.0\TennisProject.deps.json
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\bin\Debug\net5.0\TennisProject.runtimeconfig.json
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\bin\Debug\net5.0\TennisProject.runtimeconfig.dev.json
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\bin\Debug\net5.0\TennisProject.dll
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\bin\Debug\net5.0\ref\TennisProject.dll
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\bin\Debug\net5.0\TennisProject.pdb
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\obj\Debug\net5.0\TennisProject.csprojAssemblyReference.cache
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\obj\Debug\net5.0\TennisProject.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\obj\Debug\net5.0\TennisProject.AssemblyInfoInputs.cache
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\obj\Debug\net5.0\TennisProject.AssemblyInfo.cs
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\obj\Debug\net5.0\TennisProject.csproj.CoreCompileInputs.cache
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\obj\Debug\net5.0\TennisProject.dll
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\obj\Debug\net5.0\ref\TennisProject.dll
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\obj\Debug\net5.0\TennisProject.pdb
+D:\Dropbox\Programming\VisualStudioProjects\TennisProject\TennisProject\TennisProject\obj\Debug\net5.0\TennisProject.genruntimeconfig.cache
