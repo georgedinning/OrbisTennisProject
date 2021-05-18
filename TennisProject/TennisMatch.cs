@@ -36,7 +36,7 @@ namespace TennisProject
                 }
                 if ((matchWinner = GetWinner()) != -1) break;
             }
-            Console.WriteLine("Player{0} Wins the Match   Player1 {1} Sets - Player2 {2} Sets)", matchWinner, this.player1SetCount, this.player2SetCount);
+            Console.WriteLine("Player{0} Wins the Match   Player1 {1} Sets - Player2 {2} Sets", matchWinner, this.player1SetCount, this.player2SetCount);
         }
         public int GetWinner()
         {
