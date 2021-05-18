@@ -8,13 +8,13 @@ namespace TennisProject
 {
     public class TennisGame
     {
-        private Random random;
+        private IBoolPicker boolPicker;
         private int points1, points2;
         private int gameNumber;
-        public TennisGame(int gameNumber)
+        public TennisGame(IBoolPicker boolPicker, int gameNumber)
         {
             this.gameNumber = gameNumber;
-            this.random = new Random();
+            this.boolPicker = boolPicker;
             this.points1 = 0;
             this.points2 = 0;
         }
@@ -72,7 +72,7 @@ namespace TennisProject
 
         public bool RandomBool()
         {
-            return this.random.Next(0, 2) == 0;
+            return this.boolPicker.nextBool();
         }
     }
 }

@@ -18,14 +18,14 @@ namespace TennisProject
             this.games = new List<TennisGame>();
         }
 
-        public void Play()
+        public void Play(IBoolPicker boolPicker)
         {
             int setWinner;
             int gameNumber = 0;
             while ((setWinner = GetWinner()) == -1)
             {
                 gameNumber++;
-                TennisGame game = new TennisGame(gameNumber);
+                TennisGame game = new TennisGame(boolPicker, gameNumber);
                 game.Play();
                 int gameWinner = game.GetWinner();
                 if (gameWinner == 1)
@@ -43,8 +43,8 @@ namespace TennisProject
         }
         public int GetWinner()
         {
-            if (player1GameCount >= 6) return 1;
-            if (player2GameCount >= 6) return 2;
+            if (player1GameCount >= 6 && player1GameCount - player2GameCount >=2) return 1;
+            if (player2GameCount >= 6 && player2GameCount - player1GameCount >= 2) return 2;
             return -1;
         }
     }

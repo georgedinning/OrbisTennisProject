@@ -8,7 +8,7 @@ namespace TennisProject
         {
             Console.WriteLine("Tennis Project Starting...");
             TennisMatch match = new TennisMatch();
-            match.Play();
+            match.Play(new BoolRandomiser());
         }
     }
 }

@@ -18,13 +18,13 @@ namespace TennisProject
             this.sets = new TennisSet[3];
         }
 
-        public void Play()
+        public void Play(IBoolPicker boolPicker)
         {
             int matchWinner = -1;
             for(int setIndex=0; setIndex<3; setIndex++)
             {
                 this.sets[setIndex] = new TennisSet(setIndex+1);
-                this.sets[setIndex].Play();
+                this.sets[setIndex].Play(boolPicker);
                 int setWinner = this.sets[setIndex].GetWinner();
                 if (setWinner == 1)
                 {
