@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\George\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\George\\.nuget\\packages"
+    ]
+  }
+=======
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\George\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\George\\.nuget\\packages"
+    ]
+  }
+>>>>>>> 37d6bcab9719fc956579fb6a54b85b904e8c9993
+}

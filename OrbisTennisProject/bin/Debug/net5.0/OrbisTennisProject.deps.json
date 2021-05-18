@@ -1,0 +1,48 @@
+<<<<<<< HEAD
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "OrbisTennisProject/1.0.0": {
+        "runtime": {
+          "OrbisTennisProject.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OrbisTennisProject/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+=======
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "OrbisTennisProject/1.0.0": {
+        "runtime": {
+          "OrbisTennisProject.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OrbisTennisProject/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+>>>>>>> 37d6bcab9719fc956579fb6a54b85b904e8c9993
+}
