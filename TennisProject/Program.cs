@@ -6,8 +6,9 @@ namespace OrbisTennisProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Tennis Project Starting");
+            Console.WriteLine("Tennis Project Starting...");
             TennisMatch match = new TennisMatch();
+            match.Play();
         }
     }
 }
