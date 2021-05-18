@@ -4,36 +4,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrbisTennisProject
+namespace TennisProject
 {
     public class TennisSet
     {
+        private int setNumber;
         private List<TennisGame> games;
-        public TennisSet()
+        private int player1GameCount = 0;
+        private int player2GameCount = 0;
+        public TennisSet(int setNumber)
         {
+            this.setNumber = setNumber;
             this.games = new List<TennisGame>();
         }
+
         public void Play()
         {
-            int winner;
-            while ((winner=GetWinner()) == -1)
+            int setWinner;
+            int gameNumber = 0;
+            while ((setWinner = GetWinner()) == -1)
             {
-                TennisGame game = new TennisGame();
+                gameNumber++;
+                TennisGame game = new TennisGame(gameNumber);
                 game.Play();
+                int gameWinner = game.GetWinner();
+                if (gameWinner == 1)
+                {
+                    player1GameCount++;
+                }
+                else
+                {
+                    player2GameCount++;
+                }
                 this.games.Add(game);
             }
-            Console.WriteLine("Player{0} Wins the Set", winner);
+            Console.WriteLine("Player{0} Wins Set {1}   Player1 {2} Games - Player2 {3} Games", setWinner, this.setNumber, this.player1GameCount, this.player2GameCount);
+            Console.WriteLine();
         }
         public int GetWinner()
         {
-            int player1Games = 0;
-            int player2Games = 0;
-            foreach(TennisGame game in this.games){
-                if (game.GetWinner() == 1) player1Games++;
-                if (game.GetWinner() == 2) player2Games++;
-            }
-            if (player1Games >= 6) return 1;
-            if (player2Games >= 6) return 2;
+            if (player1GameCount >= 6) return 1;
+            if (player2GameCount >= 6) return 2;
             return -1;
         }
     }

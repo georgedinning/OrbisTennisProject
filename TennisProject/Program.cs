@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OrbisTennisProject
+namespace TennisProject
 {
     class Program
     {
