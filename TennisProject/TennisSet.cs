@@ -9,24 +9,24 @@ namespace TennisProject
     public class TennisSet
     {
         private int setNumber;
-        private List<TennisGame> games;
-        private int player1GameCount = 0;
-        private int player2GameCount = 0;
+        private int player1GameCount;
+        private int player2GameCount;
         public TennisSet(int setNumber)
         {
             this.setNumber = setNumber;
-            this.games = new List<TennisGame>();
+            player1GameCount = 0;
+            player2GameCount = 0;
         }
 
-        public void Play(IBoolPicker boolPicker)
+        public void Play(IBoolPicker boolPicker, IOutputLogger outputLogger)
         {
             int setWinner;
             int gameNumber = 0;
             while ((setWinner = GetWinner()) == -1)
             {
                 gameNumber++;
-                TennisGame game = new TennisGame(boolPicker, gameNumber);
-                game.Play();
+                TennisGame game = new TennisGame(gameNumber);
+                game.Play(boolPicker, outputLogger);
                 int gameWinner = game.GetWinner();
                 if (gameWinner == 1)
                 {
@@ -36,10 +36,9 @@ namespace TennisProject
                 {
                     player2GameCount++;
                 }
-                this.games.Add(game);
             }
-            Console.WriteLine("Player{0} Wins Set {1}   Player1 {2} Games - Player2 {3} Games", setWinner, this.setNumber, this.player1GameCount, this.player2GameCount);
-            Console.WriteLine();
+            outputLogger.Output(String.Format("Player{0} Wins Set {1}   Player1 {2} Games - Player2 {3} Games", setWinner, this.setNumber, this.player1GameCount, this.player2GameCount));
+            outputLogger.Output("");
         }
         public int GetWinner()
         {

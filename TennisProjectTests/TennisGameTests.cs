@@ -11,14 +11,15 @@ namespace TennisProjectTests
         [TestMethod]
         public void Tests()
         {
-            TestGameScores(new List<bool> {true, true, true, false, false, true}, 4, 2, 1);
+            IOutputLogger outputLogger = new ConsoleLogger();
+            TestGameScores(new List<bool> {true, true, true, false, false, true}, 4, 2, 1, outputLogger);
         }
 
-        public void TestGameScores(List<bool> booleans, int expectedScore1, int expectedScore2, int expectedWinner)
+        public void TestGameScores(List<bool> booleans, int expectedScore1, int expectedScore2, int expectedWinner, IOutputLogger outputLogger)
         {
-            TennisGame game = new TennisGame(new BoolListPicker(booleans), 0);
+            TennisGame game = new TennisGame(0);
 
-            game.Play();
+            game.Play(new BoolListPicker(booleans), outputLogger);
 
             Assert.AreEqual(game.GetPlayer1Points(), expectedScore1, 0.001, "Player1 Score incorrect");
             Assert.AreEqual(game.GetPlayer2Points(), expectedScore2, 0.001, "Player2 Score incorrect");

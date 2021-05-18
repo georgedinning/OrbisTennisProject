@@ -8,25 +8,23 @@ namespace TennisProject
 {
     public class TennisGame
     {
-        private IBoolPicker boolPicker;
-        private int points1, points2;
         private int gameNumber;
-        public TennisGame(IBoolPicker boolPicker, int gameNumber)
+        private int points1, points2;
+        public TennisGame(int gameNumber)
         {
             this.gameNumber = gameNumber;
-            this.boolPicker = boolPicker;
             this.points1 = 0;
             this.points2 = 0;
         }
 
-        public void Play()
+        public void Play(IBoolPicker boolPicker, IOutputLogger outputLogger)
         {
             int pointCount = 0;
             int winner;
             while ((winner=this.GetWinner()) == -1)
             {
                 pointCount++;
-                if (this.RandomBool())
+                if (boolPicker.nextBool())
                 {
                     this.Player1ScorePoint();
                 }
@@ -35,7 +33,7 @@ namespace TennisProject
                     this.Player2ScorePoint();
                 }
             }
-            Console.WriteLine("Player{0} Wins Game {1}   Player1 {2} points - Player2 {3} points", winner, this.gameNumber, this.points1, this.points2);
+            outputLogger.Output(String.Format("Player{0} Wins Game {1}   Player1 {2} points - Player2 {3} points", winner, this.gameNumber, this.points1, this.points2));
         }
 
         public void Player1ScorePoint()
@@ -68,11 +66,6 @@ namespace TennisProject
                 return 2;
             }
             return -1;
-        }
-
-        public bool RandomBool()
-        {
-            return this.boolPicker.nextBool();
         }
     }
 }

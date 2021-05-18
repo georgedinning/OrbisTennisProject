@@ -6,9 +6,10 @@ namespace TennisProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Tennis Project Starting...");
+            IOutputLogger outputLogger = new ConsoleLogger();
+            outputLogger.Output("Tennis Project Starting...");
             TennisMatch match = new TennisMatch();
-            match.Play(new BoolRandomiser());
+            match.Play(new BoolRandomiser(), outputLogger);
         }
     }
 }
