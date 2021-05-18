@@ -14,16 +14,21 @@ namespace TennisProject
             this.type = type;
         }
 
-        public TennisScoreable CreateTennisScorable(int round)
+        public TennisScoreable CreateTennisScorable(int round, IBoolPicker boolPicker, IOutputLogger outputLogger)
         {
+            TennisScoreable tennisScoreable = null;
             if (this.type.Equals("Game"))
             {
-                return new TennisGame(round);
+                tennisScoreable = new TennisGame(round);
             }else if (this.type.Equals("Set"))
             {
-                return new TennisSet(round);
+                tennisScoreable = new TennisSet(round);
             }
-            return null;
+            if (tennisScoreable != null)
+            {
+                tennisScoreable.Play(boolPicker, outputLogger);
+            }
+            return tennisScoreable;
         }
     }
 }

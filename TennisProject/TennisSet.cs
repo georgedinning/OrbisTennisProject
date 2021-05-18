@@ -12,7 +12,7 @@ namespace TennisProject
         {
 
         }
-        public override void EndOutput(int winner, IOutputLogger outputLogger)
+        public override void Output(int winner, IOutputLogger outputLogger)
         {
             outputLogger.Output(String.Format("Player{0} Wins Set {1}   Player1 {2} Games - Player2 {3} Games", winner, this.label, this.player1Count, this.player2Count));
             outputLogger.Output("");

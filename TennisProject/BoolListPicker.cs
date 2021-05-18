@@ -18,8 +18,12 @@ namespace TennisProject
         }
         public bool nextBool()
         {
-            bool result = booleans[this.index];
-            index++;
+            bool result = this.booleans[this.index];
+            this.index++;
+            if (this.index >= this.booleans.Count)
+            {
+                this.index = 0;
+            }
             return result;
         }
     }

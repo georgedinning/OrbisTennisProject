@@ -34,8 +34,7 @@ namespace TennisProject
                 }
                 else
                 {
-                    TennisScoreable tennisScoreable = tennisScoreableFactory.CreateTennisScorable(round);
-                    tennisScoreable.Play(boolPicker, outputLogger);
+                    TennisScoreable tennisScoreable = tennisScoreableFactory.CreateTennisScorable(round, boolPicker, outputLogger);
                     roundWinner = tennisScoreable.GetWinner();
                 }
                 if (roundWinner == 1)
@@ -46,13 +45,11 @@ namespace TennisProject
                 {
                     player2Count++;
                 }
-                this.RoundOutput(round, outputLogger);
             }
-            this.EndOutput(winner, outputLogger);
+            this.Output(winner, outputLogger);
         }
         public abstract int GetWinner();
-        public virtual void RoundOutput(int round, IOutputLogger outputLogger) { }
-        public abstract void EndOutput(int winner, IOutputLogger outputLogger);
+        public abstract void Output(int winner, IOutputLogger outputLogger);
 
         public virtual int GetPlayer1Count()
         {
