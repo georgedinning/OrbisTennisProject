@@ -6,40 +6,21 @@ using System.Threading.Tasks;
 
 namespace TennisProject
 {
-    public class TennisMatch
+    public class TennisMatch : TennisScoreable
     {
-        private int player1SetCount, player2SetCount;
-
-        public TennisMatch()
+        public TennisMatch() : base(0, new TennisScoreableFactory("Set"))
         {
-            this.player1SetCount = 0;
-            this.player2SetCount = 0;
+
         }
 
-        public void Play(IBoolPicker boolPicker, IOutputLogger outputLogger)
+        public override void EndOutput(int winner, IOutputLogger outputLogger)
         {
-            int matchWinner = -1;
-            for(int setIndex=0; setIndex<3; setIndex++)
-            {
-                TennisSet set = new TennisSet(setIndex+1);
-                set.Play(boolPicker, outputLogger);
-                int setWinner = set.GetWinner();
-                if (setWinner == 1)
-                {
-                    player1SetCount++;
-                }
-                else
-                {
-                    player2SetCount++;
-                }
-                if ((matchWinner = GetWinner()) != -1) break;
-            }
-            outputLogger.Output(String.Format("Player{0} Wins the Match   Player1 {1} Sets - Player2 {2} Sets", matchWinner, this.player1SetCount, this.player2SetCount));
+            outputLogger.Output(String.Format("Player{0} Wins the Match   Player1 {1} Sets - Player2 {2} Sets", winner, this.player1Count, this.player2Count));
         }
-        public int GetWinner()
+        public override int GetWinner()
         {
-            if (player1SetCount >= 2) return 1;
-            if (player2SetCount >= 2) return 2;
+            if (player1Count >= 2) return 1;
+            if (player2Count >= 2) return 2;
             return -1;
         }
     }

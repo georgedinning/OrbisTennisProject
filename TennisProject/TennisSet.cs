@@ -6,45 +6,24 @@ using System.Threading.Tasks;
 
 namespace TennisProject
 {
-    public class TennisSet
+    public class TennisSet : TennisScoreable
     {
-        private int setNumber;
-        private int player1GameCount;
-        private int player2GameCount;
-        public TennisSet(int setNumber)
+        public TennisSet(int setNumber) : base(setNumber, new TennisScoreableFactory("Game"))
         {
-            this.setNumber = setNumber;
-            player1GameCount = 0;
-            player2GameCount = 0;
-        }
 
-        public void Play(IBoolPicker boolPicker, IOutputLogger outputLogger)
+        }
+        public override void EndOutput(int winner, IOutputLogger outputLogger)
         {
-            int setWinner;
-            int gameNumber = 0;
-            while ((setWinner = GetWinner()) == -1)
-            {
-                gameNumber++;
-                TennisGame game = new TennisGame(gameNumber);
-                game.Play(boolPicker, outputLogger);
-                int gameWinner = game.GetWinner();
-                if (gameWinner == 1)
-                {
-                    player1GameCount++;
-                }
-                else
-                {
-                    player2GameCount++;
-                }
-            }
-            outputLogger.Output(String.Format("Player{0} Wins Set {1}   Player1 {2} Games - Player2 {3} Games", setWinner, this.setNumber, this.player1GameCount, this.player2GameCount));
+            outputLogger.Output(String.Format("Player{0} Wins Set {1}   Player1 {2} Games - Player2 {3} Games", winner, this.label, this.player1Count, this.player2Count));
             outputLogger.Output("");
         }
-        public int GetWinner()
+
+        public override int GetWinner()
         {
-            if (player1GameCount >= 6 && player1GameCount - player2GameCount >=2) return 1;
-            if (player2GameCount >= 6 && player2GameCount - player1GameCount >= 2) return 2;
+            if (player1Count >= 6 && player1Count - player2Count >= 2) return 1;
+            if (player2Count >= 6 && player2Count - player1Count >= 2) return 2;
             return -1;
         }
+
     }
 }

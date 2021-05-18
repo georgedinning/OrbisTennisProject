@@ -8,6 +8,7 @@ namespace TennisProject
         {
             IOutputLogger outputLogger = new ConsoleLogger();
             outputLogger.Output("Tennis Project Starting...");
+
             TennisMatch match = new TennisMatch();
             match.Play(new BoolRandomiser(), outputLogger);
         }
